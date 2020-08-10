@@ -12,6 +12,9 @@ $transition: 0.5s ease all;
 /*******
 Basic
 ********/
+html{
+    scroll-behavior: smooth;
+}
 *{
     margin: 0;
     padding: 0;
@@ -30,9 +33,41 @@ h1,h2,h3,h4,h5,h6{
 a{
     text-decoration: none;
 }
+.visible{
+    visibility: visible !important;
+    opacity: 1 !important;
+}
 .container{
     width: 80%;
     margin: auto;
+    @media(max-width: 768px){
+        width: 100%;
+    }
+}
+i.fa-arrow-up{
+    position: absolute;
+    background: white;
+    right: 35px;
+    bottom: 80px;
+    color: $darkGray;
+    z-index: 2000;
+    font-size: 3rem;
+    padding: 7px;
+    border-radius: 15px;
+    border: 2.5px solid transparent;
+    box-shadow: 0 0 10px $darkGray;
+    position: fixed;
+    visibility: hidden;
+    opacity: 0;
+    transition: $transition;
+    &:hover{
+        color: $darkOrange;
+        transition: $transition;
+        box-shadow: 0 0 20px $darkGray;;
+        border: 2.5px solid $darkOrange;
+        cursor: pointer;
+    }
+    
 }
 /***********
 Header
@@ -45,19 +80,32 @@ Header
         &:hover{
             color: $darkGray;
         }
+        
+    }
+    @media (max-width: 768px){
+     text-align: center;   
     }
 }
 nav{
     padding: 20px;
     background: linear-gradient(rgba(255, 255, 255,0.8),rgba(183, 188, 190,0.6));
+    position: fixed;
+    top: 90px;
+    width: 100%;
+    z-index: 200;
     ul{
         list-style-type: none;
         display: flex;
-        
+        @media (max-width: 768px){
+            justify-content: center;
+        }
         li{
             margin-right: 50px;
             text-transform: uppercase;
             font-weight: 600;
+            @media (max-width: 768px){
+                margin-right: 10px;
+            }
             a{
                 color: $darkGray;
                 transition: 0.8s ease;  
@@ -86,6 +134,13 @@ header{
     background-size: cover;
     height: 75vh;
     overflow: hidden;
+    position: relative;
+    @media (max-width: 768px){
+     height: 60vh;   
+     display: flex;
+     justify-content: center;
+     align-items: center;
+    }
     h2{
         position: absolute;
         bottom: 20%;
@@ -98,22 +153,40 @@ header{
         span{
             color: $darkOrange;
             font-size: 8rem;
+            @media (max-width: 768px){
+                font-size: 5rem;   
+               }
         }
+        @media (max-width: 768px){
+            font-size: 3rem;
+            text-align: center;   
+            position: static;
+            justify-content: center;
+            align-items: center;
+           }
     }
+    
 }
 /***********
 Our Team
 ***********/
 .our-team{
     padding: 50px 0;
+    @media (max-width: 768px){
+        padding: 20px 0;   
+       }
     h2{
         text-align: center;
         font-size: 4.5rem;
         color: $darkGray;
         padding: 50px 0;
+        @media (max-width: 768px){
+            font-size: 3rem;   
+           }
     }
     .cards{
         display: flex;
+        flex-wrap: wrap;
         .card{
             display: flex;
             flex-direction: column;
@@ -123,6 +196,10 @@ Our Team
             padding: 20px;
             box-shadow: 0 0 10px $darkGray;
             border-radius: 10px;
+            @media (max-width: 768px){
+                flex: 0 0 90%;   
+                margin-bottom: 30px;
+               }
             .image{
                 height: 200px;
                 width: 200px;
@@ -160,6 +237,11 @@ Our Team
         height: 25vh;
         align-items: center;
         padding: 0px 50px;
+        @media (max-width: 768px){
+            flex-direction: column;   
+            flex-wrap: wrap;
+            padding: 10px;
+           }
         .text{
             text-align: center;
             .num{
@@ -187,6 +269,7 @@ Our Team
     .container{
         display: flex;
         justify-content: space-between;
+        flex-wrap: wrap;
         .post{
             flex:  0 0 46%;
             display: flex;
@@ -194,6 +277,10 @@ Our Team
             box-shadow: 0 0 10px $darkGray;   
             padding: 30px;    
             border-radius: 10px;
+            @media (max-width: 768px){
+                flex: 0 0 100%;   
+                margin-bottom: 30px;
+               }
             .featured-image{
                 width: 100%;
                 img{
