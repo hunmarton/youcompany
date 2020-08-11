@@ -36,6 +36,7 @@ a{
 .visible{
     visibility: visible !important;
     opacity: 1 !important;
+    transform: rotate(0deg);
 }
 .container{
     width: 80%;
@@ -259,7 +260,6 @@ Our Team
     }
 }
 .blog{
-    
     h2{
         text-align: center;
         font-size: 4.5rem;
@@ -270,6 +270,8 @@ Our Team
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
+        opacity: 0;
+        transition: 1.5s ease;
         .post{
             flex:  0 0 46%;
             display: flex;

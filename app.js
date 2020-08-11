@@ -22,3 +22,11 @@ window.addEventListener('scroll', () => {
         navBar.style.top = 90 + 'px';
     }
 });
+const blogs = document.getElementById('blogs');
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 1200) {
+        blogs.classList.add('visible');
+    } else {
+        blogs.classList.remove('visible');
+    }
+});
